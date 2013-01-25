@@ -11,7 +11,15 @@
     <body>
         <div id="specialstuff">
             <span id="fsstatus"></span>
-            <input type="button" value="Go Fullscreen" id="fsbutton">
+            
+            <div class="visibleNormal">
+                <h1> Clean Your Screen!!</h1>
+                
+                <img src="~/Content/clean-touch-screen-586x439.jpg"/>
+
+                <input type="button" value="Start Cleaning" id="fsbutton">            
+            </div>
+
             @RenderBody()
         </div>
         @Scripts.Render("~/bundles/jquery")
@@ -109,9 +117,11 @@
 
                 fsElement.addEventListener(fullScreenApi.fullScreenEventName, function () {
                     if (fullScreenApi.isFullScreen()) {
-                        fsStatus.innerHTML = 'Whoa, you went fullscreen';
+                        fsStatus.innerHTML = 'You can now start cleaning your screen. Press Esc to exit';
+                        $('.visibleNormal').hide();
                     } else {
-                        fsStatus.innerHTML = 'Back to normal';
+                        $('.visibleNormal').show();
+                        fsStatus.innerHTML = '';
                     }
                 }, true);
 
