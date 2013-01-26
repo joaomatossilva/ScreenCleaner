@@ -10,26 +10,53 @@
         <meta property="og:image" content="http://community.vodacom.co.za/t5/image/serverpage/image-id/28iEB3D542B778E12FE/image-size/medium?v=mpbl-1&px=-1"/>
         <meta property="og:description" content="A web 3.0 app that will help you clean your screen."/>
         @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
+        @Styles.Render("~/Content/css-responsive")
+        @RenderSection("head", required: false)
+        @Html.Partial("_html5shiv")
     </head>
     <body>
-        <div id="specialstuff">
-            <span id="fsstatus"></span>
+        <div class="container">
+            <div id="specialstuff">
+                <span id="fsstatus"></span>
             
-            <div class="visibleNormal">
-                <h1> Clean Your Screen!!</h1>
-                
-                <img src="http://community.vodacom.co.za/t5/image/serverpage/image-id/28iEB3D542B778E12FE/image-size/medium?v=mpbl-1&px=-1"/>
-                <br />  
-                <input type="button" value="Start Cleaning" id="fsbutton">
-                <br />
-                <iframe src="http://www.facebook.com/plugins/like.php?href=http://screencleaner.apphb.com"
-                    scrolling="no" frameborder="0"
-                    style="border:none; width:450px; height:80px"></iframe>
+                <div class="visibleNormal">
+                    <div class="hero-unit">
+                        <h1>Clean Your Screen</h1>
+                        <p>Clean your screen in the middle of your work without shutdown your computer.</p>
+                    </div>
 
-            @RenderBody()
+                    
+
+                    <div class="row-fluid" style="text-align: center;">
+                    
+                        <div class="span4">
+                            <h3>1. Get some clean cloth</h3>
+                            <img src="~/Images/medium.png"/>
+                        </div>
+                    
+                        <div class="span4">
+                            <h3>2. Then some cleaning liquid</h3>
+                            <img src="~/Images/liquid.png"/>
+                        </div>
+                    
+                        <div class="span4">
+                            <h3>3. Follow the examples</h3>
+                            <br/>
+                            <button class="btn btn-primary btn-large" id="fsbutton">Start Cleaning</button>
+                        </div>
+
+                    </div>
+                
+                    <br />
+                    <iframe src="http://www.facebook.com/plugins/like.php?href=http://screencleaner.apphb.com"
+                            scrolling="no" frameborder="0"
+                            style="border:none; width:450px; height:80px"></iframe>
+                </div>
+                @RenderBody()
+            </div>
         </div>
-        @Scripts.Render("~/bundles/jquery")
+
+        @Scripts.Render("~/bundles/js")
         @RenderSection("scripts", required: false)
         <script>
 
