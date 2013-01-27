@@ -1,14 +1,18 @@
-﻿<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#">
+﻿@using System.Configuration
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
     <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - ScreenCleaner</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        <meta property="og:title" content="ScreenCleaner"/>
-        <meta property="og:url" content="http://screencleaner.apphb.com"/>
-        <meta property="og:image" content="http://community.vodacom.co.za/t5/image/serverpage/image-id/28iEB3D542B778E12FE/image-size/medium?v=mpbl-1&px=-1"/>
+        <meta property="og:title" content="ScreenCleaner" />
+        <meta property="og:type" content="website" />
         <meta property="og:description" content="A web 3.0 app that will help you clean your screen."/>
+        <meta property="og:url" content="http://screencleaner.apphb.com" />
+        <meta property="og:image" content="http://screencleaner.apphb.com/Images/medium.png" />
+        <meta property="og:site_name" content="ScreenCleaner" />
+        <meta property="fb:admins" content="@ConfigurationManager.AppSettings["FacebookAdmins"]"/>
         @Styles.Render("~/Content/css")
         @Styles.Render("~/Content/css-responsive")
         @RenderSection("head", required: false)
