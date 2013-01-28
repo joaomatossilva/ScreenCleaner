@@ -8,8 +8,11 @@ namespace ScreenCleaner
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            /* we need to separate jquery and bootstrap due to some bundling issues with minification */
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                        "~/Scripts/jquery-{version}.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                        "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(

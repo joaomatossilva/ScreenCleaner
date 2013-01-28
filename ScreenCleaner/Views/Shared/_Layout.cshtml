@@ -63,7 +63,9 @@
                 @RenderBody()
             </div>
         </div>
-
+        
+        /@* See ScreenCleaner.BundleConfig comment *@
+        @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/js")
         @RenderSection("scripts", required: false)
         <script>
